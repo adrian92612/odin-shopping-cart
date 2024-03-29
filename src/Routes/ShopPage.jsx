@@ -1,15 +1,29 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
+import CategoryFilter from "../Components/CategoryFilter";
+import ShowProducts from "../Components/ShowProducts";
+import Loading from "../Components/Loading";
+
+const categoryArray = ["Electronics", "Jewelery", `Men's Clothing`, `Women's Clothing`];
 
 export default function ShopPage() {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  function handleClick(category) {
+    const items = !category
+      ? products
+      : products.filter((item) => item.category === category.toLowerCase());
+    setFilteredProducts(items);
+  }
 
   useEffect(() => {
     async function getProducts() {
       try {
         const response = await (await fetch(`https://fakestoreapi.com/products`)).json();
-        console.log(response);
-        setData(response);
+        setProducts(response);
+        setFilteredProducts(response);
       } catch (error) {
         console.log(error);
       } finally {
@@ -19,21 +33,13 @@ export default function ShopPage() {
     getProducts();
   }, []);
 
-  if (loading) return <h2>Loading Items...</h2>;
+  if (loading) return <Loading />;
 
   return (
-    <ul>
-      {data &&
-        data.map((data) => (
-          <li key={data.id}>
-            <h2>{data?.title}</h2>
-            <img src={data?.image} alt="" style={{ width: "100px", height: "auto" }} />
-            <p>
-              {data?.price} {data?.rating.rate} {data?.rating.count}
-            </p>
-            <p>{data?.description}</p>
-          </li>
-        ))}
-    </ul>
+    <div>
+      <h2>Categories</h2>
+      <CategoryFilter categories={categoryArray} onCategorySelect={handleClick} />
+      <ShowProducts products={filteredProducts} />
+    </div>
   );
 }
