@@ -13,22 +13,22 @@ export default function ShopPage() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
 
-  function handleClick(category) {
+  const handleClick = (category) => {
     const items = !category
       ? products
       : products.filter((item) => item.category === category.toLowerCase());
     setFilteredProducts(items);
-  }
+  };
 
-  function handleItemCount(itemId, adjustment) {
+  const handleItemCount = (itemId, adjustment) => {
     setSelectedItems((currentItems) =>
       currentItems.map((item) =>
         item.id === itemId ? { ...item, count: Math.max(1, item.count + adjustment) } : item
       )
     );
-  }
+  };
 
-  function handleAddItem(item) {
+  const handleAddItem = (item) => {
     setSelectedItems((currentItems) => {
       const existingItemIndex = currentItems.findIndex((currItem) => currItem.id === item.id);
       if (existingItemIndex !== -1) {
@@ -39,7 +39,10 @@ export default function ShopPage() {
         return [...currentItems, { ...item, count: 1 }];
       }
     });
-  }
+  };
+
+  const handleRemoveItem = (itemId) =>
+    setSelectedItems((currentItems) => currentItems.filter((item) => item.id !== itemId));
 
   useEffect(() => {
     async function getProducts() {
@@ -63,7 +66,7 @@ export default function ShopPage() {
       <h2>Categories</h2>
       <CategoryFilter categories={categoryArray} onCategorySelect={handleClick} />
       <ShowProducts products={filteredProducts} handleClick={handleAddItem} />
-      <Cart items={selectedItems} handleCount={handleItemCount} />
+      <Cart items={selectedItems} handleCount={handleItemCount} handleRemove={handleRemoveItem} />
     </div>
   );
 }
