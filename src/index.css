@@ -1,0 +1,11 @@
+.blur-overlay {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 10;
+  /* background-color: black; */
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  display: none;
+}

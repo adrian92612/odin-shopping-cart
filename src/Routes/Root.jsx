@@ -1,12 +1,20 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 
 export default function Root() {
   return (
     <div>
-      <h1>Main Page</h1>
-      <Link to={`/`}>Home</Link>
-      <Link to={`/shop`}>Shop</Link>
-      <Outlet />
+      <div className="blur-overlay"></div>
+      <header>
+        <nav>
+          <NavLink />
+        </nav>
+      </header>
+      <main>
+        <Link to={`/`}>Home</Link>
+        <Link to={`/shop`}>Shop</Link>
+        <Outlet />
+      </main>
+      <footer></footer>
     </div>
   );
 }
