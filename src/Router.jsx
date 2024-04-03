@@ -3,6 +3,7 @@ import Root from "./Components/Root/Root";
 import Home from "./Components/Home/Home";
 import Products from "./Components/Products/Products";
 import Categories from "./Components/Categories/Categories";
+import ProductDetails from "./Components/ProductDetail/ProductDetails";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -19,6 +20,10 @@ export default function Router() {
             {
               path: ":category",
               element: <Categories />,
+            },
+            {
+              path: "item/:productId",
+              element: <ProductDetails />,
             },
           ],
         },

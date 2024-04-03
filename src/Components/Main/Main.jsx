@@ -36,7 +36,7 @@ const Main = () => {
   return (
     <main>
       <Cart cartItems={cartItems} />
-      <Outlet context={{ products, loading, handleAddItem }} />;
+      <Outlet context={{ products, loading, handleAddItem }} />
     </main>
   );
 };
