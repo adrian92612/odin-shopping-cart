@@ -1,21 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
 import "./Root.css";
 import Main from "../Main/Main";
-import NotificationModal from "../Notification/NotificationModal";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import Header from "../Header/Header";
 
 const Root = () => {
   return (
     <div className="root">
-      <NotificationModal />
-      <header>
-        <Link to={"/"}>
-          <h1>Amber</h1>
-        </Link>
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/products"}>Products</NavLink>
-      </header>
+      <Header />
       <Main />
       <footer>
         <p>Some Footer</p>
