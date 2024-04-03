@@ -11,14 +11,16 @@ const ProductCard = ({ product, handleAddItem }) => {
   };
 
   return (
-    <li onClick={handleCardClick}>
-      <div className="product-card">
-        <img src={product.image} alt="" />
-        <h3>{product.title}</h3>
-        <p>${product.price}</p>
-        <button onClick={handleAddItemClick}>Add to Cart</button>
-      </div>
-    </li>
+    <>
+      <li onClick={handleCardClick}>
+        <div className="product-card">
+          <img src={product.image} alt="" />
+          <h3>{product.title}</h3>
+          <p>${product.price}</p>
+          <button onClick={handleAddItemClick}>Add to Cart</button>
+        </div>
+      </li>
+    </>
   );
 };
 

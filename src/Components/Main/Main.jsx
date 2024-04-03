@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Cart from "../Cart/Cart";
+import { toast } from "react-toastify";
 
 const Main = () => {
   const [products, setProducts] = useState([]);
@@ -15,6 +16,7 @@ const Main = () => {
           )
         : [...prevItems, { ...product, count: 1 }]
     );
+    toast.success(`${product.title} has been added to your cart!`);
   };
 
   useEffect(() => {
@@ -23,7 +25,6 @@ const Main = () => {
         const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
         setProducts(data);
-        console.log(data);
       } catch (error) {
         console.error(error);
       } finally {
