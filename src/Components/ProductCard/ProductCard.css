@@ -1,0 +1,12 @@
+.product-card {
+  width: 200px;
+  border: 1px solid red;
+  min-height: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card > img {
+  aspect-ratio: 4 /5;
+}

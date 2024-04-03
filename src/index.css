@@ -13,3 +13,7 @@ nav a.active {
   text-decoration: none;
   font-weight: bolder;
 }
+
+ul {
+  list-style-type: none;
+}

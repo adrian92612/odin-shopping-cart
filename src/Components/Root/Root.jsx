@@ -1,8 +1,10 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "./Root.css";
+import Main from "../Main/Main";
 
 const Root = () => {
   return (
-    <>
+    <div className="root">
       <header>
         <Link to={"/"}>
           <h1>Amber</h1>
@@ -10,13 +12,11 @@ const Root = () => {
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/products"}>Products</NavLink>
       </header>
-      <main>
-        <Outlet />
-      </main>
+      <Main />
       <footer>
         <p>Some Footer</p>
       </footer>
-    </>
+    </div>
   );
 };
 

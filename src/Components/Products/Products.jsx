@@ -1,17 +1,13 @@
-import { NavLink, Outlet } from "react-router-dom";
-
-const productCategories = ["All", `Men's Clothing`, `Women's Clothing`, `Jewelery`, `Electronics`];
+import { Outlet, useOutletContext } from "react-router-dom";
+import CategoryLinks from "../CategoryLinks.jsx/CategoryLinks";
+import { useState } from "react";
 
 const Products = () => {
+  const [cartItems, setCartItems] = useState([]);
   return (
     <div>
-      {productCategories.map((category) => (
-        <NavLink key={category} to={`/products/${category.toLowerCase()}`}>
-          {category}
-        </NavLink>
-      ))}
-
-      <Outlet />
+      <CategoryLinks />
+      <Outlet context={useOutletContext()} /> {/*Categories*/}
     </div>
   );
 };
