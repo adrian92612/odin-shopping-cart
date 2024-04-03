@@ -5,7 +5,7 @@ import "./Categories.css";
 
 const Categories = () => {
   const { category } = useParams();
-  const { products, loading } = useOutletContext();
+  const { products, loading, handleAddItem } = useOutletContext();
 
   const productList =
     category === "all" ? products : products.filter((product) => product.category === category);
@@ -15,7 +15,7 @@ const Categories = () => {
   return (
     <ul className="products-container">
       {productList.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.id} product={product} handleAddItem={handleAddItem} />
       ))}
     </ul>
   );

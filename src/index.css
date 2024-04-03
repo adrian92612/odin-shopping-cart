@@ -9,7 +9,7 @@
   display: none;
 }
 
-nav a.active {
+a.active {
   text-decoration: none;
   font-weight: bolder;
 }
