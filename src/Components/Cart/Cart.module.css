@@ -5,23 +5,23 @@
   bottom: 0;
   width: 80%;
   max-width: 400px;
-  /* height: 100dvh; */
-  overflow-y: scroll;
   border-left: 3px solid black;
   background-color: white;
   transition: all 0.5s ease-in-out;
   transform: translateX(100%);
   z-index: 10;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.closeBtn {
-  background-color: antiquewhite;
-  padding: 5px;
-  border: 3px solid black;
-  border-radius: 50%;
-  position: absolute;
-  /* transform: translate(-110%, 10px); */
+.listContainer {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.checkoutBtn {
+  margin-top: auto;
 }
 
 .blurOverlay {
@@ -68,11 +68,7 @@
   aspect-ratio: 4/5;
 }
 
-.cartItemContainer div {
+.cartItemContainer > div {
   display: flex;
   flex-direction: column;
-}
-
-h5 {
-  margin-bottom: auto;
 }

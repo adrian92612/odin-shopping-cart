@@ -15,9 +15,25 @@ const Main = () => {
         ? prevItems.map((item) =>
             item.id === product.id ? { ...item, count: item.count + 1 } : item
           )
-        : [...prevItems, { ...product, count: 1 }]
+        : [...prevItems, { ...product, count: 1, forCheckOut: false }]
     );
     toast.success(`${product.title} has been added to your cart!`);
+  };
+
+  const adjustItemCount = (itemId, n) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, count: Math.max(item.count + n, 1) } : item
+      )
+    );
+  };
+
+  const toggleItemForCheckout = (itemId) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, forCheckout: !item.forCheckout } : item
+      )
+    );
   };
 
   useEffect(() => {
@@ -26,7 +42,6 @@ const Main = () => {
         const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
         setProducts(data);
-        console.log(data);
       } catch (error) {
         console.error(error);
       } finally {
@@ -38,7 +53,11 @@ const Main = () => {
 
   return (
     <main>
-      <Cart cartItems={cartItems} />
+      <Cart
+        cartItems={cartItems}
+        toggleItemForCheckout={toggleItemForCheckout}
+        adjustItemCount={adjustItemCount}
+      />
       <Outlet context={{ products, loading, handleAddItem }} />
     </main>
   );

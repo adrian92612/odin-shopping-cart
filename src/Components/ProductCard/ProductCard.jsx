@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 // import { useNavigat } from "react-router-dom";
 import { useNavigateToProduct } from "../../Helpers/helpers";
+import { AddToCartIcon } from "../SVG/Icons";
 import "./ProductCard.css";
 
 const ProductCard = ({ product, handleAddItem }) => {
@@ -17,7 +18,12 @@ const ProductCard = ({ product, handleAddItem }) => {
           <img src={product.image} alt="" />
           <h3>{product.title}</h3>
           <p>${product.price}</p>
-          <button onClick={handleAddItemClick}>Add to Cart</button>
+          <p>
+            Rating:{product.rating.rate}⭐ ({product.rating.count})
+          </p>
+          <button onClick={handleAddItemClick}>
+            Add to Cart <AddToCartIcon />
+          </button>
         </div>
       </li>
     </>
