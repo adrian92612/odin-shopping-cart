@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Categories = () => {
   const { category } = useParams();
-  const { products, loading, handleAddItem } = useOutletContext();
+  const { products, loading, error, handleAddItem } = useOutletContext();
   const [priceSort, setPriceSort] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
 
@@ -21,7 +21,7 @@ const Categories = () => {
   );
 
   if (loading) return <Loading />;
-
+  if (error) return <h1>Error: {error}</h1>;
   return (
     <>
       <div className="filters">

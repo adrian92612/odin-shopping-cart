@@ -7,6 +7,7 @@ import "./Main.css";
 const Main = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [cartItems, setCartItems] = useState([]);
 
   const handleAddItem = (product) => {
@@ -40,10 +41,12 @@ const Main = () => {
     const getProducts = async () => {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
+        if (!response.ok) throw new Error("Network response is not ok");
         const data = await response.json();
         setProducts(data);
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        console.error("Failed to fetch products", err);
+        setError(err);
       } finally {
         setLoading(false);
       }
@@ -58,7 +61,7 @@ const Main = () => {
         toggleItemForCheckout={toggleItemForCheckout}
         adjustItemCount={adjustItemCount}
       />
-      <Outlet context={{ products, loading, handleAddItem }} />
+      <Outlet context={{ products, loading, error, handleAddItem }} />
     </main>
   );
 };
