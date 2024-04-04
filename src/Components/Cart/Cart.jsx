@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import styles from "./Cart.module.css";
 import { CartIcon } from "../SVG/Icons";
+import { useNavigateToProduct } from "../../Helpers/helpers";
+import styles from "./Cart.module.css";
 
 const Cart = ({ cartItems }) => {
   const [visibility, setVisibility] = useState(false);
+  const navigateToProduct = useNavigateToProduct();
   const toggleVisibility = () => setVisibility(!visibility);
 
   const totalItems = cartItems.reduce((total, item) => total + item.count, 0);
@@ -24,7 +26,14 @@ const Cart = ({ cartItems }) => {
         <ul>
           {cartItems.length ? (
             cartItems.map((item) => (
-              <li key={item.id} className={styles.cartItemContainer}>
+              <li
+                key={item.id}
+                className={styles.cartItemContainer}
+                onClick={() => {
+                  navigateToProduct(item.id);
+                  toggleVisibility();
+                }}
+              >
                 <img src={item.image} alt="" />
                 <div>
                   <h5>{item.title}</h5>

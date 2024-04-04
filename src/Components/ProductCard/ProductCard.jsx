@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useNavigate } from "react-router-dom";
+// import { useNavigat } from "react-router-dom";
+import { useNavigateToProduct } from "../../Helpers/helpers";
 import "./ProductCard.css";
 
 const ProductCard = ({ product, handleAddItem }) => {
-  const navigate = useNavigate();
-  const handleCardClick = () => navigate(`/products/item/${product.id}`);
+  const navigateToProduct = useNavigateToProduct();
   const handleAddItemClick = (e) => {
     e.stopPropagation();
     handleAddItem(product);
@@ -12,7 +12,7 @@ const ProductCard = ({ product, handleAddItem }) => {
 
   return (
     <>
-      <li onClick={handleCardClick}>
+      <li onClick={() => navigateToProduct(product.id)}>
         <div className="product-card">
           <img src={product.image} alt="" />
           <h3>{product.title}</h3>
