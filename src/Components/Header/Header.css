@@ -1,0 +1,20 @@
+header {
+  position: fixed;
+  width: 100%;
+  background-color: aliceblue;
+  top: 0;
+  height: 100px;
+  display: flex;
+}
+
+.divider {
+  border: 1px solid black;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header .divider:nth-child(2) {
+  justify-content: center;
+}

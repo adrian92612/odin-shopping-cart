@@ -2,14 +2,26 @@
   position: fixed;
   top: 0;
   right: 0;
+  bottom: 0;
   width: 80%;
-  max-width: 500px;
-  height: 100dvh;
-  border: 1px solid black;
+  max-width: 400px;
+  /* height: 100dvh; */
+  overflow-y: scroll;
+  border-left: 3px solid black;
   background-color: white;
   transition: all 0.5s ease-in-out;
   transform: translateX(100%);
   z-index: 10;
+  padding: 20px;
+}
+
+.closeBtn {
+  background-color: antiquewhite;
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 50%;
+  position: absolute;
+  /* transform: translate(-110%, 10px); */
 }
 
 .blurOverlay {
@@ -29,4 +41,38 @@
 
 .cartContainer.show {
   transform: translate(0);
+}
+
+.cartBtn {
+  position: fixed;
+  background-color: transparent;
+  border: none;
+  top: 0;
+  margin-top: 35px;
+  right: 20px;
+}
+
+.cartBtn:hover {
+  transform: scale(1.2);
+}
+
+.cartItemContainer {
+  display: flex;
+  padding: 20px;
+  border-bottom: 2px solid gray;
+  gap: 20px;
+}
+
+.cartItemContainer img {
+  width: 100px;
+  aspect-ratio: 4/5;
+}
+
+.cartItemContainer div {
+  display: flex;
+  flex-direction: column;
+}
+
+h5 {
+  margin-bottom: auto;
 }
