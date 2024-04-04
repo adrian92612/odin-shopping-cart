@@ -26,6 +26,7 @@ const Main = () => {
         const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
         setProducts(data);
+        console.log(data);
       } catch (error) {
         console.error(error);
       } finally {
