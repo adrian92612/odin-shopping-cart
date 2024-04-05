@@ -20,10 +20,10 @@ const Categories = () => {
     priceSort === "asc" ? a.price - b.price : priceSort === "desc" ? b.price - a.price : 0
   );
 
-  if (loading) return <Loading />;
+  // if (loading) return <Loading />;
   if (error) return <h1>Error: {error}</h1>;
   return (
-    <>
+    <div className="categories">
       <div className="filters">
         <select value={priceSort} onChange={(e) => setPriceSort(e.target.value)}>
           <option value="">Sort by price</option>
@@ -38,12 +38,16 @@ const Categories = () => {
           <option value="4">4 Stars and above</option>
         </select>
       </div>
-      <ul className="products-container">
-        {filteredAndSorted.map((product) => (
-          <ProductCard key={product.id} product={product} handleAddItem={handleAddItem} />
-        ))}
-      </ul>
-    </>
+      {loading ? (
+        <Loading />
+      ) : (
+        <ul className="products-container">
+          {filteredAndSorted.map((product) => (
+            <ProductCard key={product.id} product={product} handleAddItem={handleAddItem} />
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 

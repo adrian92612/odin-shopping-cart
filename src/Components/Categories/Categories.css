@@ -6,3 +6,9 @@
   padding: 20px;
   gap: 20px;
 }
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
