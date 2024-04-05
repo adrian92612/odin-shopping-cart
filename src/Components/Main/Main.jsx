@@ -21,6 +21,11 @@ const Main = () => {
     toast.success(`${product.title} has been added to your cart!`);
   };
 
+  const removeItemFromCart = (itemId) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+    toast.success(`An item was removed from your cart!`);
+  };
+
   const adjustItemCount = (itemId, n) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -60,6 +65,7 @@ const Main = () => {
         cartItems={cartItems}
         toggleItemForCheckout={toggleItemForCheckout}
         adjustItemCount={adjustItemCount}
+        removeItemFromCart={removeItemFromCart}
       />
       <Outlet context={{ products, loading, error, handleAddItem }} />
     </main>

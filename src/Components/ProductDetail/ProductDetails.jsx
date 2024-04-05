@@ -25,14 +25,18 @@ const ProductDetails = () => {
     }
   }, [productId, products]);
 
-  if (!item) return <Loading />;
-
   return (
-    <div>
-      <img src={item.image} alt="" />
-      <h2>{item.title}</h2>
-      <button onClick={() => handleAddItem(item)}>Add to Cart</button>
-    </div>
+    <>
+      {item ? (
+        <div>
+          <img src={item.image} alt="" />
+          <h2>{item.title}</h2>
+          <button onClick={() => handleAddItem(item)}>Add to Cart</button>
+        </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 };
 
