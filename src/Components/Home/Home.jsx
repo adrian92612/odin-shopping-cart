@@ -5,11 +5,23 @@ import Loading from "../Loading/Loading";
 const Home = () => {
   const { products, loading } = useOutletContext();
 
+  const getRandomItems = () => {
+    const selectedIndices = new Set();
+    const selectedItems = [];
+    while (selectedItems.length < 5) {
+      const randomIndex = Math.floor(Math.random() * products.length);
+      if (!selectedIndices.has(randomIndex)) {
+        selectedIndices.add(randomIndex);
+        selectedItems.push(products[randomIndex]);
+      }
+    }
+    return selectedItems;
+  };
+
   return (
     <>
       <h1>HOME PAGE</h1>
-      {/* {loading ? <Loading /> : <ImageSlider products={products} />} */}
-      <Loading />
+      {loading ? <Loading /> : <ImageSlider products={getRandomItems()} />}
     </>
   );
 };

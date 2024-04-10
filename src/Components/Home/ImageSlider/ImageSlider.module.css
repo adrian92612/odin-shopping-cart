@@ -1,0 +1,49 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  border-radius: 10px;
+  /* box-shadow: 0 0 5px black; */
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 2s ease-in-out;
+}
+
+.carouselTrack img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 5/4;
+}
+
+.carousel button {
+  all: unset;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel button:nth-child(3) {
+  right: 0;
+  left: auto;
+}
+
+.carousel button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel button:hover > * {
+  animation: squish 1s ease-in-out;
+}
+
+@keyframes squish {
+  50% {
+    scale: 1.4 0.6;
+  }
+}
