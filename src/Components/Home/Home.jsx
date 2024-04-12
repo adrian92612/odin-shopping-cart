@@ -8,13 +8,14 @@ const Home = () => {
   const getRandomItems = () => {
     const selectedIndices = new Set();
     const selectedItems = [];
-    while (selectedItems.length < 5) {
+    while (selectedItems.length < 6) {
       const randomIndex = Math.floor(Math.random() * products.length);
       if (!selectedIndices.has(randomIndex)) {
         selectedIndices.add(randomIndex);
         selectedItems.push(products[randomIndex]);
       }
     }
+    console.log(selectedItems);
     return selectedItems;
   };
 

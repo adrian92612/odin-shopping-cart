@@ -1,5 +1,5 @@
 const small = "12px";
-const medium = "24px";
+// const medium = "24px";
 const large = "36px";
 
 const CartIcon = () => (
