@@ -28,7 +28,6 @@ const Cart = ({ cartItems, toggleItemForCheckout, adjustItemCount, removeItemFro
       </button>
       <div className={`${styles.cartContainer} ${visibility && styles.show}`}>
         <h1>Cart Items</h1>
-
         <ul className={styles.listContainer}>
           {cartItems.length ? (
             cartItems.map((item) => (

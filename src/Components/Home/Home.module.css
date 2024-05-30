@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modelImages {
+  /* max-width: 50%; */
+}
