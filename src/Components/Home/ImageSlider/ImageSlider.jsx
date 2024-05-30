@@ -46,7 +46,7 @@ const ImageSlider = ({ products }) => {
     <>
       <h2>Featured Items</h2>
       <div className={styles.carousel}>
-        <h1>{currentIndex}</h1>
+        {/* <h1>{currentIndex}</h1> */}
         <div className={styles.carouselTrack} style={{ transform: `translate(${slideOffset}%)` }}>
           {products.map((item) => (
             <div key={item.id} onClick={() => navigateToProduct(item.id)}>
@@ -56,10 +56,10 @@ const ImageSlider = ({ products }) => {
           ))}
         </div>
         <button onClick={goToNext}>
-          <ArrowNext />
+          <ArrowPrev />
         </button>
         <button onClick={goToPrev}>
-          <ArrowPrev />
+          <ArrowNext />
         </button>
       </div>
     </>

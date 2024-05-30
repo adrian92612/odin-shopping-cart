@@ -3,15 +3,14 @@ import Main from "../Main/Main";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Root = () => {
   return (
     <div className="root">
       <Header />
       <Main />
-      <footer>
-        <p>Some Footer</p>
-      </footer>
+      <Footer />
       <ToastContainer
         position="top-center"
         autoClose={1000}
