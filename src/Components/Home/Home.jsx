@@ -19,7 +19,6 @@ const Home = () => {
         selectedItems.push(products[randomIndex]);
       }
     }
-    console.log(selectedItems);
     return selectedItems;
   };
 

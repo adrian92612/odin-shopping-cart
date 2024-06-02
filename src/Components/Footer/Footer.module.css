@@ -6,3 +6,8 @@ footer a {
   display: block;
   width: 200px;
 }
+
+.socMedIcons {
+  display: inline-block;
+  width: 50px;
+}

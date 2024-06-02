@@ -2,6 +2,7 @@ import styles from "./Footer.module.css";
 import { toast } from "react-toastify";
 import googlePlayBadge from "../../assets/googleplaybadge.png";
 import appStoreBadge from "../../assets/appstorebadge.png";
+import { FacebookIcon, InstagramIcon, XIcon, YoutubeIcon } from "../SVG/Icons";
 
 export default function Footer() {
   const onSubscription = (e) => {
@@ -34,6 +35,40 @@ export default function Footer() {
         <a href="#">
           <img className={styles.badges} src={appStoreBadge} alt="App Store Badge" />
         </a>
+      </div>
+      <div>
+        <h3>Follow us!</h3>
+        <i className={styles.socMedIcons}>
+          <FacebookIcon />
+        </i>
+        <i className={styles.socMedIcons}>
+          <InstagramIcon />
+        </i>
+        <i className={styles.socMedIcons}>
+          <YoutubeIcon />
+        </i>
+        <i className={styles.socMedIcons}>
+          <XIcon />
+        </i>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <h4>Customer Support</h4>
+        <p>999-999-999</p>
+        <p>CustomerSupport@amber.com</p>
+      </div>
+      <div>
+        <h3>Branches</h3>
+        <p>Manila - Main</p>
+        <p>Bangkok</p>
+        <p>Hanoi</p>
+        <p>Milan</p>
+        <p>New York</p>
+        <p>Paris</p>
+        <p>Tokyo</p>
+      </div>
+      <div>
+        <p>Copyright © 2024 Amber&#39;s Shop®. All Rights Reserved.</p>
       </div>
     </footer>
   );
