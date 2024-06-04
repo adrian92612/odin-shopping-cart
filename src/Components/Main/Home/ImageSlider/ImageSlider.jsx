@@ -44,7 +44,7 @@ const ImageSlider = ({ products }) => {
 
   return (
     <>
-      <h2>Featured Items</h2>
+      <h2 className={styles.carouselHeading}>Best Sellers</h2>
       <div className={styles.carousel}>
         {/* <h1>{currentIndex}</h1> */}
         <div className={styles.carouselTrack} style={{ transform: `translate(${slideOffset}%)` }}>
