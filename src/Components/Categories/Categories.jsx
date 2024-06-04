@@ -1,6 +1,6 @@
 import { useOutletContext, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
-import ProductCard from "../ProductCard/ProductCard";
+import ProductCard from "../Main/ProductCard/ProductCard";
 import "./Categories.css";
 import { useState } from "react";
 

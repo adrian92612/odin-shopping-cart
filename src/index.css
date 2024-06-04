@@ -4,7 +4,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: var(--text-color);
+  color: var(--primary-color);
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -17,6 +20,11 @@ a {
 
 a.active {
   font-weight: bolder;
+}
+
+button {
+  border: none;
+  background-color: var(--accent-color);
 }
 
 ul {

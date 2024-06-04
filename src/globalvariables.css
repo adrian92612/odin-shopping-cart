@@ -1,9 +1,10 @@
 :root {
-  --primary-color: #8fa64a;
-  --secondary-color: #785638;
-  --accent-color: #ddc682;
-  --background-color: #eadfc5;
-  --text-color: #28282b;
+  --primary-color: #6f4e37;
+  --secondary-color: #556b2f;
+  --accent-color: #c04000;
+  --background-color: #fffff0;
+  --background-color2: #f5f5dc;
+  --text-color: #451b04;
 
-  --font-size-header: clamp(1.5rem, 1rem + 4vw, 5rem);
+  --font-size-header: clamp(2rem, 1rem + 4vw, 5rem);
 }

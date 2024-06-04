@@ -1,9 +1,9 @@
 import { useOutletContext, Link } from "react-router-dom";
 import ImageSlider from "./ImageSlider/ImageSlider";
-import Loading from "../Loading/Loading";
-import manWomanPic from "../../assets/man-woman.jpg";
-import jewelleryPic from "../../assets/jewellery.jpg";
-import electronicsPic from "../../assets/electronics.jpg";
+import Loading from "../../Loading/Loading";
+import manWomanPic from "../../../assets/man-woman.jpg";
+import jewelleryPic from "../../../assets/jewellery.jpg";
+import electronicsPic from "../../../assets/electronics.jpg";
 import styles from "./Home.module.css";
 
 const Home = () => {
