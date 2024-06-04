@@ -1,15 +1,19 @@
+@import "../../globalvariables.css";
+
 header {
-  position: fixed;
   width: 100%;
-  background-color: aliceblue;
-  top: 0;
+  background-color: var(--primary-color);
   height: 100px;
   display: flex;
   z-index: 1;
 }
 
+header h1,
+header h2 {
+  font-size: var(--font-size-header);
+}
+
 .divider {
-  border: 1px solid black;
   flex: 1;
   display: flex;
   align-items: center;

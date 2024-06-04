@@ -3,5 +3,7 @@
   --secondary-color: #785638;
   --accent-color: #ddc682;
   --background-color: #eadfc5;
-  --text-color: #0f0e0e;
+  --text-color: #28282b;
+
+  --font-size-header: clamp(1.5rem, 1rem + 4vw, 5rem);
 }

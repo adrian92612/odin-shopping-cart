@@ -1,11 +1,21 @@
+@import "./globalvariables.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
 }
 
 a.active {
-  text-decoration: none;
   font-weight: bolder;
 }
 
