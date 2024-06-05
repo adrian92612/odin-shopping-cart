@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Cart from "../Cart/Cart";
+// import Cart from "../Cart/Cart";
+import Cart from "./Cart/Cart";
 import { toast } from "react-toastify";
 import "./Main.css";
 

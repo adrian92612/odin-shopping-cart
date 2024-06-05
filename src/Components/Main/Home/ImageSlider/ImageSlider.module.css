@@ -65,7 +65,7 @@
 }
 
 .carousel button:hover > * {
-  animation: squish 1s ease-in-out infinite;
+  animation: squish 1s ease-in-out;
 }
 
 @keyframes squish {
