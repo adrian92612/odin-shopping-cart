@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
-import Loading from "../Loading/Loading";
+import Loading from "../../../Loading/Loading";
 
 const ProductDetails = () => {
   const { productId } = useParams();
