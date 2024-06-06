@@ -7,7 +7,7 @@
   gap: 20px;
   padding: 20px;
   top: 140%;
-  right: 0;
+  left: 0;
   box-shadow: 0 0 5px var(--primary-color);
   border-radius: 5px;
   font-size: 1.2rem;

@@ -1,12 +1,34 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { CartIcon, MinusIcon, PlusIcon } from "../../SVG/Icons";
+import { toast } from "react-toastify";
 import styles from "./Cart.module.css";
 import { Link } from "react-router-dom";
 
-const Cart = ({ cartItems, toggleItemForCheckout, adjustItemCount, removeItemFromCart }) => {
+const Cart = ({ cartItems, setCartItems }) => {
   const [visibility, setVisibility] = useState(false);
   const toggleVisibility = () => setVisibility(!visibility);
+
+  const removeItemFromCart = (itemId) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+    toast.success(`An item was removed from your cart!`);
+  };
+
+  const adjustItemCount = (itemId, n) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, count: Math.max(item.count + n, 1) } : item
+      )
+    );
+  };
+
+  const toggleItemForCheckout = (itemId) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, forCheckout: !item.forCheckout } : item
+      )
+    );
+  };
 
   const totalItems = cartItems.reduce((total, item) => total + item.count, 0);
   const getTotalCheckoutPrice = () => {
