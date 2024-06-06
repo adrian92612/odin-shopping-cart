@@ -1,0 +1,7 @@
+@import "../../../globalvariables.css";
+
+.menuBtn {
+  width: 50px;
+  background-color: transparent;
+  position: relative;
+}

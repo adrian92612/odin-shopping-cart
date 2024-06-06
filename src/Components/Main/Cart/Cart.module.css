@@ -1,3 +1,5 @@
+@import "../../../globalvariables.css";
+
 .cartContainer {
   position: fixed;
   top: 0;
@@ -46,10 +48,13 @@
 .cartBtn {
   position: fixed;
   background-color: transparent;
-  border: none;
-  top: 0;
+  backdrop-filter: blur(2px);
+  padding: 5px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  bottom: 3%;
   margin-top: 35px;
-  right: 20px;
+  right: 5%;
   z-index: 1;
 }
 
