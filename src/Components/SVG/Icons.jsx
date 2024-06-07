@@ -2,6 +2,34 @@ const small = "12px";
 // const medium = "24px";
 const large = "60px";
 
+const RightArrow = () => (
+  <svg
+    fill="#000000"
+    width="36px"
+    height="36px"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    className="icon line"
+    stroke="#000000"
+  >
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      <path
+        id="primary"
+        d="M3,12H21m-3,3,3-3L18,9"
+        style={{
+          fill: "none",
+          stroke: "#c04000",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          strokeWidth: "1.5",
+        }}
+      ></path>
+    </g>
+  </svg>
+);
+
 const CartIcon = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -215,4 +243,5 @@ export {
   LinkedInIcon,
   XIcon,
   YoutubeIcon,
+  RightArrow,
 };

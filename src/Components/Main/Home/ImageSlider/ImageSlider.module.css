@@ -16,7 +16,9 @@
 
 .carouselHeading {
   margin: 0 auto;
-  font-weight: bolder;
+  font-family: "Lobster", sans-serif;
+  font-size: 2rem;
+  text-shadow: 0 0 10px var(--accent-color);
   margin-bottom: 10px;
   color: var(--secondary-color);
 }
