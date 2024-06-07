@@ -1,13 +1,84 @@
-/* .badges {
-  width: 200px;
-} */
+@import "../../globalvariables.css";
+
+footer h3 {
+  color: var(--secondary-color);
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 1.5px solid var(--secondary-color);
+  width: 100%;
+}
 
 footer a {
   display: block;
   width: 200px;
 }
 
+footer button {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
+
+.goTopBtn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 0 5%;
+}
+
+.container > div {
+  flex: 1 1 200px;
+}
+
+.container .subscription {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.subscription form {
+  display: flex;
+  justify-content: center;
+}
+
+.subscription input {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  padding: 10px;
+}
+
+.subscription button {
+  padding: 10px;
+}
+
+.getApp,
+.followUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .socMedIcons {
   display: inline-block;
   width: 50px;
+}
+
+.branchesCity {
+  display: flex;
+  justify-content: space-around;
+}
+
+.copyright {
+  text-align: center;
+  padding: 0 5%;
+  padding-bottom: 20px;
 }

@@ -19,55 +19,68 @@ export default function Footer() {
 
   return (
     <footer>
-      <button onClick={goBackToTop}>Go back to Top</button>
-      <div>
-        <h3>Subscribe and get the latest offers and discounts!</h3>
-        <form onSubmit={onSubscription}>
-          <input type="email" placeholder="Enter your email address" required />
-          <button type="submit">Subscribe</button>
-        </form>
+      <button onClick={goBackToTop} className={styles.goTopBtn}>
+        Go back to Top
+      </button>
+      <div className={styles.container}>
+        <div className={styles.subscription}>
+          <h3>Subscribe and get the latest offers and discounts!</h3>
+          <form onSubmit={onSubscription}>
+            <input type="email" placeholder="Enter your email address" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div className={styles.getApp}>
+          <h3>Get the App</h3>
+          <a href="#">
+            <img className={styles.badges} src={googlePlayBadge} alt="Google Play Badge" />
+          </a>
+          <a href="#">
+            <img className={styles.badges} src={appStoreBadge} alt="App Store Badge" />
+          </a>
+        </div>
+        <div className={styles.followUs}>
+          <h3>Follow us!</h3>
+          <div>
+            <i className={styles.socMedIcons}>
+              <FacebookIcon />
+            </i>
+            <i className={styles.socMedIcons}>
+              <InstagramIcon />
+            </i>
+            <i className={styles.socMedIcons}>
+              <YoutubeIcon />
+            </i>
+            <i className={styles.socMedIcons}>
+              <XIcon />
+            </i>
+          </div>
+        </div>
+        <div className={styles.contactUs}>
+          <h3>Contact Us</h3>
+          <h4>Customer Support</h4>
+          <p>999-999-999</p>
+          <p>CustomerSupport@amber.com</p>
+        </div>
+        <div className={styles.branches}>
+          <h3>Branches</h3>
+          <div className={styles.branchesCity}>
+            <div>
+              <p>Manila - Main</p>
+              <p>Bangkok</p>
+              <p>Hanoi</p>
+              <p>Milan</p>
+            </div>
+            <div>
+              <p>New York</p>
+              <p>Paris</p>
+              <p>Tokyo</p>
+              <p>Sydney</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3>Get the App</h3>
-        <a href="#">
-          <img className={styles.badges} src={googlePlayBadge} alt="Google Play Badge" />
-        </a>
-        <a href="#">
-          <img className={styles.badges} src={appStoreBadge} alt="App Store Badge" />
-        </a>
-      </div>
-      <div>
-        <h3>Follow us!</h3>
-        <i className={styles.socMedIcons}>
-          <FacebookIcon />
-        </i>
-        <i className={styles.socMedIcons}>
-          <InstagramIcon />
-        </i>
-        <i className={styles.socMedIcons}>
-          <YoutubeIcon />
-        </i>
-        <i className={styles.socMedIcons}>
-          <XIcon />
-        </i>
-      </div>
-      <div>
-        <h3>Contact Us</h3>
-        <h4>Customer Support</h4>
-        <p>999-999-999</p>
-        <p>CustomerSupport@amber.com</p>
-      </div>
-      <div>
-        <h3>Branches</h3>
-        <p>Manila - Main</p>
-        <p>Bangkok</p>
-        <p>Hanoi</p>
-        <p>Milan</p>
-        <p>New York</p>
-        <p>Paris</p>
-        <p>Tokyo</p>
-      </div>
-      <div>
+      <div className={styles.copyright}>
         <p>Copyright © 2024 Amber&#39;s Shop®. All Rights Reserved.</p>
       </div>
     </footer>
