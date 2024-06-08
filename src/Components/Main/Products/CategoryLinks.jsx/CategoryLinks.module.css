@@ -1,0 +1,14 @@
+.categoryLinks {
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  padding: 0 5%;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.categoryLinks a {
+  font-size: clamp(0.4rem, 4dvw, 1.2rem);
+}
