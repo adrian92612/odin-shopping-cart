@@ -1,4 +1,4 @@
-const small = "12px";
+// const small = "12px";
 // const medium = "24px";
 const large = "60px";
 
@@ -43,11 +43,11 @@ const CartIcon = () => (
 );
 
 const PlusIcon = () => (
-  <svg width={small} height={small} viewBox="0 0 24 24" fill="none">
+  <svg viewBox="0 0 24 24" fill="none">
     <path
       d="M6 12H18M12 6V18"
-      stroke="#000000"
-      strokeWidth="2"
+      stroke="#fffff0"
+      strokeWidth="4"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -55,11 +55,11 @@ const PlusIcon = () => (
 );
 
 const MinusIcon = () => (
-  <svg width={small} height={small} viewBox="0 0 24 24" fill="none" stroke="#000000">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#000000">
     <path
       d="M6 12L18 12"
-      stroke="#000000"
-      strokeWidth="2"
+      stroke="#fffff0"
+      strokeWidth="4"
       strokeLinecap="round"
       strokeLinejoin="round"
     />

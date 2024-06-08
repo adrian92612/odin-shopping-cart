@@ -1,10 +1,11 @@
+/* eslint-disable react/display-name */
 import styles from "./Footer.module.css";
 import { toast } from "react-toastify";
 import googlePlayBadge from "../../assets/googleplaybadge.png";
 import appStoreBadge from "../../assets/appstorebadge.png";
 import { FacebookIcon, InstagramIcon, XIcon, YoutubeIcon } from "../SVG/Icons";
-
-export default function Footer() {
+import { memo } from "react";
+const Footer = memo(() => {
   const onSubscription = (e) => {
     e.preventDefault();
     toast.success(`Thank you for subscribing!`);
@@ -16,6 +17,8 @@ export default function Footer() {
       behavior: "smooth",
     });
   };
+
+  console.log("footer re-rendered");
 
   return (
     <footer>
@@ -85,4 +88,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});
+
+export default Footer;

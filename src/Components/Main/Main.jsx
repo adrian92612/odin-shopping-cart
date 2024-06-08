@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -5,8 +6,9 @@ import { Outlet } from "react-router-dom";
 // import Cart from "./Cart/Cart";
 import { toast } from "react-toastify";
 import "./Main.css";
+import { memo } from "react";
 
-const Main = ({ setCartItems }) => {
+const Main = memo(({ setCartItems }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,11 +41,13 @@ const Main = ({ setCartItems }) => {
     getProducts();
   }, []);
 
+  console.log("main re-rendered");
+
   return (
     <main>
       <Outlet context={{ products, loading, error, handleAddItem }} />
     </main>
   );
-};
+});
 
 export default Main;
