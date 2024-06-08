@@ -27,6 +27,10 @@ button {
   background-color: var(--accent-color);
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 ul {
   list-style-type: none;
 }
