@@ -1,0 +1,41 @@
+.card {
+  height: 480px;
+  border: 2px solid var(--secondary-color);
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  gap: 5px;
+  padding: 5px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card button {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h3 {
+  margin-bottom: auto;
+  font-weight: bolder;
+  max-height: 80px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card h3::-webkit-scrollbar {
+  display: none;
+}
+
+.card img {
+  aspect-ratio: 2/2.5;
+  width: 100%;
+}

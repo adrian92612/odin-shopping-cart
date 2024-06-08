@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // import { useNavigat } from "react-router-dom";
-import { useNavigateToProduct } from "../../../Helpers/helpers";
-import { AddToCartIcon } from "../../SVG/Icons";
+import { useNavigateToProduct } from "../../../../Helpers/helpers";
+import { AddToCartIcon } from "../../../SVG/Icons";
 import "./ProductCard.css";
 
 const ProductCard = ({ product, handleAddItem }) => {

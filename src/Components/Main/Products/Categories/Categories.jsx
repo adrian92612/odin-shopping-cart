@@ -1,7 +1,7 @@
 import { useOutletContext, useParams } from "react-router-dom";
 import Loading from "../../../Loading/Loading";
-import ProductCard from "../../ProductCard/ProductCard";
-import "./Categories.css";
+import ProductCard from "../ProductCard/ProductCard";
+import styles from "./Categories.module.css";
 import { useState } from "react";
 
 const Categories = () => {
@@ -23,8 +23,8 @@ const Categories = () => {
   // if (loading) return <Loading />;
   if (error) return <h1>Error: {error}</h1>;
   return (
-    <div className="categories">
-      <div className="filters">
+    <div className={styles.categories}>
+      <div className={styles.filters}>
         <select value={priceSort} onChange={(e) => setPriceSort(e.target.value)}>
           <option value="">Sort by price</option>
           <option value="asc">Low to High</option>
@@ -41,7 +41,7 @@ const Categories = () => {
       {loading ? (
         <Loading />
       ) : (
-        <ul className="products-container">
+        <ul className={styles.productsContainer}>
           {filteredAndSorted.map((product) => (
             <ProductCard key={product.id} product={product} handleAddItem={handleAddItem} />
           ))}

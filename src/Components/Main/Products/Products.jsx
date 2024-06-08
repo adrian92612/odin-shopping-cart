@@ -1,10 +1,10 @@
 import { Outlet, useOutletContext } from "react-router-dom";
 import CategoryLinks from "./CategoryLinks.jsx/CategoryLinks";
-import styles from "./Products.module.css";
+// import styles from "./Products.module.css";
 
 const Products = () => {
   return (
-    <div className={styles.productsContainer}>
+    <div>
       <CategoryLinks />
       <Outlet context={useOutletContext()} /> {/*Categories*/}
     </div>

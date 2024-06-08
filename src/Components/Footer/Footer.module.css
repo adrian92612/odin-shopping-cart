@@ -1,5 +1,9 @@
 @import "../../globalvariables.css";
 
+footer {
+  margin-top: 50px;
+}
+
 footer h3 {
   color: var(--secondary-color);
   font-weight: bolder;

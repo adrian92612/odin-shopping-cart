@@ -1,0 +1,38 @@
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  padding: 5px;
+}
+
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.productsContainer > li {
+  flex: 0 1 250px;
+}
