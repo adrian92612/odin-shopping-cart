@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import Loading from "../../../Loading/Loading";
+import styles from "./ProductDetails.module.css";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -28,10 +29,18 @@ const ProductDetails = () => {
   return (
     <>
       {item ? (
-        <div>
-          <img src={item.image} alt="" />
-          <h2>{item.title}</h2>
-          <button onClick={() => handleAddItem(item)}>Add to Cart</button>
+        <div className={styles.container}>
+          <div className={styles.imageContainer}>
+            <img src={item.image} alt="" />
+          </div>
+          <div className={styles.details}>
+            <h2>{item.title}</h2>
+            <p>${item.price}</p>
+            <p>
+              Rating:{item.rating.rate}⭐ ({item.rating.count})
+            </p>
+            <button onClick={() => handleAddItem(item)}>Add to Cart</button>
+          </div>
         </div>
       ) : (
         <Loading />

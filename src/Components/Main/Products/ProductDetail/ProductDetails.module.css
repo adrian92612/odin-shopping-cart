@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 20px;
+}
+
+.container > div {
+  /* border: 1px solid black; */
+}
+
+.imageContainer {
+  flex-basis: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.details {
+  flex: 0 1 600px;
+}
+
+.details > h2 {
+  margin-bottom: 30px;
+}
+
+.details > button {
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--background-color);
+  margin-top: 10px;
+}
