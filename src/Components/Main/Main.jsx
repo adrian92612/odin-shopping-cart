@@ -41,8 +41,6 @@ const Main = memo(({ setCartItems }) => {
     getProducts();
   }, []);
 
-  console.log("main re-rendered");
-
   return (
     <main>
       <Outlet context={{ products, loading, error, handleAddItem }} />

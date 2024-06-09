@@ -7,7 +7,6 @@ import Cart from "./Cart/Cart";
 import { memo } from "react";
 
 const Header = memo(({ cartItems, setCartItems }) => {
-  console.log("header re-rendered");
   return (
     <header>
       <CollapsedNav />

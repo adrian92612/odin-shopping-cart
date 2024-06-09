@@ -18,8 +18,6 @@ const Footer = memo(() => {
     });
   };
 
-  console.log("footer re-rendered");
-
   return (
     <footer>
       <button onClick={goBackToTop} className={styles.goTopBtn}>

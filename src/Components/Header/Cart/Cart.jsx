@@ -39,7 +39,12 @@ const Cart = ({ cartItems, setCartItems }) => {
 
   const handleCheckout = (e) => {
     e.preventDefault();
-    setCartItems((prevItems) => prevItems.filter((item) => !item.forCheckout));
+    if (getTotalCheckoutPrice() > 0) {
+      setCartItems((prevItems) => prevItems.filter((item) => !item.forCheckout));
+      toast.success("Thank you purchasing!");
+    } else {
+      toast.warn("No items selected for checkout");
+    }
   };
 
   return (

@@ -13,7 +13,6 @@ const Root = () => {
     setCartItems(newItems);
   }, []);
 
-  console.log("root re-rendered");
   return (
     <div className="root">
       <Header cartItems={cartItems} setCartItems={memoizedSetCartItems} />
