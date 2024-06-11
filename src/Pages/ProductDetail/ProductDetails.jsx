@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
-import Loading from "../../../Loading/Loading";
+import Loading from "../../Components/Loading/Loading";
 import styles from "./ProductDetails.module.css";
 
 const ProductDetails = () => {

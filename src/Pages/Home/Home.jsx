@@ -1,11 +1,12 @@
 import { useOutletContext, Link } from "react-router-dom";
-import ImageSlider from "./ImageSlider/ImageSlider";
-import Loading from "../../Loading/Loading";
-import manWomanPic from "../../../assets/man-woman.jpg";
-import jewelleryPic from "../../../assets/jewellery.jpg";
-import electronicsPic from "../../../assets/electronics.jpg";
+import ImageSlider from "../../Components/ImageSlider/ImageSlider";
+import Loading from "../../Components/Loading/Loading";
+import manWomanPic from "../../assets/man-woman.jpg";
+import jewelleryPic from "../../assets/jewellery.jpg";
+import electronicsPic from "../../assets/electronics.jpg";
+
 import styles from "./Home.module.css";
-import { RightArrow } from "../../SVG/Icons";
+import { RightArrow } from "../../Components/SVG/Icons";
 
 const Home = () => {
   const { products, loading } = useOutletContext();

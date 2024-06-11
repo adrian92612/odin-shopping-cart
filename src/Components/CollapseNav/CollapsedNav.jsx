@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MenuIcon } from "../../SVG/Icons";
+import { MenuIcon } from "../SVG/Icons";
 import styles from "./CollapsedNav.module.css";
 import MenuModal from "./MenuModal";
 

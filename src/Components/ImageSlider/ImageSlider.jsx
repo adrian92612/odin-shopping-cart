@@ -2,8 +2,8 @@
 import { useState } from "react";
 import styles from "./ImageSlider.module.css";
 import { useEffect } from "react";
-import { ArrowNext, ArrowPrev } from "../../../SVG/Icons";
-import { useNavigateToProduct } from "../../../../Helpers/helpers";
+import { ArrowNext, ArrowPrev } from "../SVG/Icons";
+import { useNavigateToProduct } from "../../Helpers/helpers";
 
 const ImageSlider = ({ products }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

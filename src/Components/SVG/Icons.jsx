@@ -1,5 +1,3 @@
-// const small = "12px";
-// const medium = "24px";
 const large = "60px";
 
 const RightArrow = () => (

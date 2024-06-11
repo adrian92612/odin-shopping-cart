@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { CartIcon, MinusIcon, PlusIcon } from "../../SVG/Icons";
+import { CartIcon, MinusIcon, PlusIcon } from "../SVG/Icons.jsx";
 import { toast } from "react-toastify";
 import styles from "./Cart.module.css";
 
