@@ -49,8 +49,14 @@ const ImageSlider = ({ products }) => {
         {/* <h1>{currentIndex}</h1> */}
         <div className={styles.carouselTrack} style={{ transform: `translate(${slideOffset}%)` }}>
           {products.map((item) => (
-            <div key={item.id} onClick={() => navigateToProduct(item.id)}>
-              <img src={item.image} alt=""></img>
+            <div
+              className={styles.container}
+              key={item.id}
+              onClick={() => navigateToProduct(item.id)}
+            >
+              <div className={styles.imageContainer}>
+                <img src={item.image} alt=""></img>
+              </div>
               <p>{item.title}</p>
             </div>
           ))}

@@ -14,7 +14,9 @@ const ProductCard = ({ product, handleAddItem }) => {
   return (
     <li onClick={() => navigateToProduct(product.id)}>
       <div className={styles.card}>
-        <img src={product.image} alt="" />
+        <div>
+          <img src={product.image} alt="" />
+        </div>
         <h3>{product.title}</h3>
         <p>${product.price}</p>
         <p>

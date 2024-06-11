@@ -11,6 +11,16 @@
   flex-direction: column;
 }
 
+.card > div {
+  height: 250px;
+  display: flex;
+}
+
+.card h3 {
+  margin-bottom: auto;
+  font-weight: bolder;
+}
+
 .card button {
   background-color: var(--secondary-color);
   color: white;
@@ -22,20 +32,10 @@
   gap: 10px;
 }
 
-.card h3 {
-  margin-bottom: auto;
-  font-weight: bolder;
-  max-height: 80px;
-  overflow: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
 .card h3::-webkit-scrollbar {
   display: none;
 }
 
 .card img {
-  aspect-ratio: 2/2.5;
-  width: 100%;
+  object-fit: contain;
 }
