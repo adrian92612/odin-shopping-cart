@@ -2,6 +2,7 @@ import { useOutletContext, useParams } from "react-router-dom";
 // import Loading from "../../../Loading/Loading";
 import Loading from "../../Components/Loading/Loading";
 import ProductCard from "../../Components/ProductCard/ProductCard";
+// import ProductCard from "../../Components/ProductCard/ProductCard";
 import styles from "./Categories.module.css";
 import { useState } from "react";
 

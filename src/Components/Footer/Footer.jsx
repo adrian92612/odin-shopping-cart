@@ -5,6 +5,7 @@ import googlePlayBadge from "../../assets/googleplaybadge.png";
 import appStoreBadge from "../../assets/appstorebadge.png";
 import { FacebookIcon, InstagramIcon, XIcon, YoutubeIcon } from "../SVG/Icons";
 import { memo } from "react";
+
 const Footer = memo(() => {
   const onSubscription = (e) => {
     e.preventDefault();
