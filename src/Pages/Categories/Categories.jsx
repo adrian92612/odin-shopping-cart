@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const Categories = () => {
   const { category } = useParams();
-  const { products, loading, error, handleAddItem } = useOutletContext();
+  const { products, loading, error } = useOutletContext();
   const [priceSort, setPriceSort] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
 
@@ -45,7 +45,7 @@ const Categories = () => {
       ) : (
         <ul className={styles.productsContainer}>
           {filteredAndSorted.map((product) => (
-            <ProductCard key={product.id} product={product} handleAddItem={handleAddItem} />
+            <ProductCard key={product.id} product={product} />
           ))}
         </ul>
       )}

@@ -6,14 +6,15 @@ import Cart from "../Cart/Cart";
 import "./Header.css";
 import { memo } from "react";
 
-const Header = memo(({ cartItems, setCartItems }) => {
+const Header = memo(({ state, dispatch }) => {
+  console.log(state);
   return (
     <header>
       <CollapsedNav />
       <Link to={"/"}>
         <h1>Amber</h1>
       </Link>
-      <Cart cartItems={cartItems} setCartItems={setCartItems} />
+      <Cart state={state} dispatch={dispatch} />
     </header>
   );
 });

@@ -1,14 +1,20 @@
 /* eslint-disable react/prop-types */
 // import { useNavigat } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import { useNavigateToProduct } from "../../Helpers/helpers";
 import { AddToCartIcon } from "../SVG/Icons";
+import { toast } from "react-toastify";
+import { ACTIONS } from "../Root/Root.jsx";
 import styles from "./ProductCard.module.css";
 
-const ProductCard = ({ product, handleAddItem }) => {
+const ProductCard = ({ product }) => {
   const navigateToProduct = useNavigateToProduct();
+  const { dispatch } = useOutletContext();
+
   const handleAddItemClick = (e) => {
     e.stopPropagation();
-    handleAddItem(product);
+    toast.success(`${product.title} has been added to your cart!`);
+    dispatch({ type: ACTIONS.ADD_ITEM, payload: { product: product } });
   };
 
   return (

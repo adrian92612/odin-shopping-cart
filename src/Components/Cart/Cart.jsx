@@ -2,36 +2,16 @@
 import { useState } from "react";
 import { CartIcon, MinusIcon, PlusIcon } from "../SVG/Icons.jsx";
 import { toast } from "react-toastify";
+import { ACTIONS } from "../Root/Root.jsx";
 import styles from "./Cart.module.css";
 
-const Cart = ({ cartItems, setCartItems }) => {
+const Cart = ({ state, dispatch }) => {
   const [visibility, setVisibility] = useState(false);
   const toggleVisibility = () => setVisibility(!visibility);
+  const totalItems = state.reduce((total, item) => total + item.count, 0);
 
-  const removeItemFromCart = (itemId) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
-    toast.success(`An item was removed from your cart!`);
-  };
-
-  const adjustItemCount = (itemId, n) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === itemId ? { ...item, count: Math.max(item.count + n, 1) } : item
-      )
-    );
-  };
-
-  const toggleItemForCheckout = (itemId) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === itemId ? { ...item, forCheckout: !item.forCheckout } : item
-      )
-    );
-  };
-
-  const totalItems = cartItems.reduce((total, item) => total + item.count, 0);
   const getTotalCheckoutPrice = () => {
-    return cartItems
+    return state
       .filter((item) => item.forCheckout === true)
       .reduce((total, item) => total + item.count * item.price, 0)
       .toFixed(2);
@@ -39,8 +19,8 @@ const Cart = ({ cartItems, setCartItems }) => {
 
   const handleCheckout = (e) => {
     e.preventDefault();
-    if (getTotalCheckoutPrice() > 0) {
-      setCartItems((prevItems) => prevItems.filter((item) => !item.forCheckout));
+    if (parseFloat(getTotalCheckoutPrice()) > 0) {
+      dispatch({ type: ACTIONS.HANDLE_CHECKOUT });
       toast.success("Thank you purchasing!");
     } else {
       toast.warn("No items selected for checkout");
@@ -60,13 +40,15 @@ const Cart = ({ cartItems, setCartItems }) => {
       <div className={`${styles.cartModal} ${visibility && styles.show}`}>
         <h3>Cart Items</h3>
         <ul className={styles.listContainer}>
-          {cartItems.length ? (
-            cartItems.map((item) => (
+          {state.length ? (
+            state.map((item) => (
               <li key={item.id} className={styles.cartItemContainer}>
                 <input
                   type="checkbox"
                   checked={item.forCheckout || false}
-                  onChange={() => toggleItemForCheckout(item.id)}
+                  onChange={() =>
+                    dispatch({ type: ACTIONS.TOGGLE_CHECKOUT, payload: { id: item.id } })
+                  }
                 />
                 <div className={styles.picPart}>
                   <img src={item.image} alt="" />
@@ -76,19 +58,38 @@ const Cart = ({ cartItems, setCartItems }) => {
                   <p className={styles.itemCount}>
                     <button
                       className={styles.countBtn}
-                      onClick={() => adjustItemCount(item.id, -1)}
+                      onClick={() =>
+                        dispatch({
+                          type: ACTIONS.ADJUST_ITEM_COUNT,
+                          payload: { id: item.id, n: -1 },
+                        })
+                      }
                     >
                       <MinusIcon />
                     </button>{" "}
                     {item.count}{" "}
-                    <button className={styles.countBtn} onClick={() => adjustItemCount(item.id, 1)}>
+                    <button
+                      className={styles.countBtn}
+                      onClick={() =>
+                        dispatch({
+                          type: ACTIONS.ADJUST_ITEM_COUNT,
+                          payload: { id: item.id, n: 1 },
+                        })
+                      }
+                    >
                       <PlusIcon />
                     </button>
                   </p>
                   <p>
                     USD <strong>{item.price.toFixed(2)}</strong>
                   </p>
-                  <button className={styles.removeBtn} onClick={() => removeItemFromCart(item.id)}>
+                  <button
+                    className={styles.removeBtn}
+                    onClick={() => {
+                      toast.success(`${item.title} has been removed from your cart!`);
+                      dispatch({ type: ACTIONS.REMOVE_ITEM, payload: { id: item.id } });
+                    }}
+                  >
                     Remove Item
                   </button>
                 </div>
@@ -102,18 +103,18 @@ const Cart = ({ cartItems, setCartItems }) => {
           <h3>Mode of Payment</h3>
           <div>
             <input type="radio" name="mop" id="cod" required />
-            <label htmlFor="cod">Cash on delivery</label>
+            <label htmlFor="cod"> Cash on delivery</label>
           </div>
           <div>
             <input type="radio" name="mop" id="cc" />
-            <label htmlFor="cc">Credit Card</label>
+            <label htmlFor="cc"> Credit Card</label>
           </div>
           <div>
             <input type="radio" name="mop" id="ewallet" />
-            <label htmlFor="ewallet">E-Wallet</label>
+            <label htmlFor="ewallet"> E-Wallet</label>
           </div>
           <h3>Total Checkout Price</h3>
-          <p>USD {cartItems.length ? getTotalCheckoutPrice() : "USD 0.00"}</p>
+          <p>USD {state.length ? getTotalCheckoutPrice() : "USD 0.00"}</p>
           <button type="submit">Checkout</button>
         </form>
       </div>
