@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { CartIcon, MinusIcon, PlusIcon } from "../SVG/Icons.jsx";
 import { toast } from "react-toastify";
 import { ACTIONS } from "../Root/Root.jsx";
@@ -10,16 +10,16 @@ const Cart = ({ state, dispatch }) => {
   const toggleVisibility = () => setVisibility(!visibility);
   const totalItems = state.reduce((total, item) => total + item.count, 0);
 
-  const getTotalCheckoutPrice = () => {
+  const getTotalCheckoutPrice = useMemo(() => {
     return state
       .filter((item) => item.forCheckout === true)
       .reduce((total, item) => total + item.count * item.price, 0)
       .toFixed(2);
-  };
+  }, [state]);
 
   const handleCheckout = (e) => {
     e.preventDefault();
-    if (parseFloat(getTotalCheckoutPrice()) > 0) {
+    if (parseFloat(getTotalCheckoutPrice) > 0) {
       dispatch({ type: ACTIONS.HANDLE_CHECKOUT });
       toast.success("Thank you purchasing!");
     } else {
@@ -114,7 +114,7 @@ const Cart = ({ state, dispatch }) => {
             <label htmlFor="ewallet"> E-Wallet</label>
           </div>
           <h3>Total Checkout Price</h3>
-          <p>USD {state.length ? getTotalCheckoutPrice() : "USD 0.00"}</p>
+          <p>USD {state.length ? getTotalCheckoutPrice : "USD 0.00"}</p>
           <button type="submit">Checkout</button>
         </form>
       </div>
