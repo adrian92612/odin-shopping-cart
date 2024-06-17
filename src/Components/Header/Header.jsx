@@ -7,7 +7,6 @@ import "./Header.css";
 import { memo } from "react";
 
 const Header = memo(({ state, dispatch }) => {
-  console.log(state);
   return (
     <header>
       <CollapsedNav />

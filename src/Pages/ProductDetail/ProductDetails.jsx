@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
+import { ACTIONS } from "../../Components/Root/Root";
 import Loading from "../../Components/Loading/Loading";
 import styles from "./ProductDetails.module.css";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const { productId } = useParams();
-  const { products, handleAddItem } = useOutletContext();
+  const { products, dispatch } = useOutletContext();
   const [item, setItem] = useState(null);
 
   useEffect(() => {
@@ -39,7 +41,14 @@ const ProductDetails = () => {
             <p>
               Rating:{item.rating.rate}⭐ ({item.rating.count})
             </p>
-            <button onClick={() => handleAddItem(item)}>Add to Cart</button>
+            <button
+              onClick={() => {
+                toast.success(`${item.title} has been added to your cart!`);
+                dispatch({ type: ACTIONS.ADD_ITEM, payload: { product: item } });
+              }}
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       ) : (

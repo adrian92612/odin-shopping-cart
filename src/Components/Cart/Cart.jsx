@@ -27,6 +27,8 @@ const Cart = ({ state, dispatch }) => {
     }
   };
 
+  console.log(`Cart re-rendered`);
+
   return (
     <div>
       <div
